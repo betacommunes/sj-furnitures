@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { AiOutlineUser, AiOutlineMail, AiOutlineLock } from "react-icons/ai";
+import { IoClose } from "react-icons/io5";
 import avatar from "../../assets/avatar.jpg";
 
-const LoginSignup = () => {
+const LoginSignup = ({ onClose }) => {
   const [isSignUp, setIsSignUp] = useState(true);
 
   // Showing and hiding Icons and text in input fields while focus
@@ -11,12 +12,12 @@ const LoginSignup = () => {
   const [isPasswordFieldActive, setIsPasswordFieldActive] = useState(false);
 
   return (
-    <div className=" text-primaryTextClr relative lg:w-[900px] mx-5 h-[550px] lg:mx-auto overflow-hidden shadow-lg rounded-xl">
+    <div className="bg-white  relative lg:w-[900px] h-[550px] overflow-hidden shadow-lg rounded-xl font-normal ">
       {/* Green Panel (40% width) */}
       <div
         className={`md:block hidden absolute top-0 h-full w-[40%] bg-primary text-white p-10 transition-transform duration-700 ease-in-out z-20 overflow-hidden ${
           isSignUp ? "translate-x-0" : "translate-x-[150%]"
-        }`} 
+        }`}
       >
         {/* Content Container */}
         <div className="relative w-full h-full overflow-hidden">
@@ -64,7 +65,7 @@ const LoginSignup = () => {
           isSignUp ? "md:translate-x-[66.666%]" : "translate-x-0"
         }`}
       >
-        <div className="w-full max-w-md space-y-5">
+        <div className="w-full  space-y-5">
           <h2 className="text-3xl text-secondary font-bold mb-4">
             {isSignUp ? "Create Account" : "Login"}
           </h2>
@@ -83,7 +84,8 @@ const LoginSignup = () => {
               <div className="upload-area rounded-full cursor-pointer">
                 <label htmlFor="file-input">
                   <img
-                    className=" h-20 w-20 rounded-full cursor-pointer" title="Change picture"
+                    className=" h-20 w-20 rounded-full cursor-pointer"
+                    title="Change picture"
                     src={avatar}
                     alt=""
                   />
@@ -93,7 +95,7 @@ const LoginSignup = () => {
                   type="file"
                   name="avatar"
                   id="file-input"
-title="Upload profile picture"
+                  title="Upload profile picture"
                   hidden
                 />
               </div>
@@ -156,10 +158,7 @@ title="Upload profile picture"
 
           {!isSignUp && (
             <div className="mt-4 ">
-              <a
-                href="#"
-                className=" text-secondary text-sm hover:underline"
-              >
+              <a href="#" className=" text-secondary text-sm hover:underline">
                 Forgot your password?
               </a>
             </div>
@@ -184,9 +183,19 @@ title="Upload profile picture"
                 {isSignUp ? "Login" : "Create Now"}
               </span>
             </h1>
-          </div>  
+          </div>
         </div>
       </form>
+
+      {/* close btn  to close the login signup page */}
+
+      <button
+        onClick={onClose}
+        className={`absolute top-4 right-4 z-50 outline-none ${isSignUp ? "" : "text-white"}`}
+        aria-label="Close modal"
+      >
+        <IoClose className="text-2xl" />
+      </button>
     </div>
   );
 };
