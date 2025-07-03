@@ -15,7 +15,7 @@ const Products = () => {
       id: 1,
       name: "Chair",
       discription: "Wood",
-      ratingValue: "4",
+      ratingValue: "5",
       image: p1_img,
       new_price: 50.0,
       old_price: 80.5,
@@ -60,7 +60,7 @@ const Products = () => {
           className="w-full max-w-md gap-5 mt-10 bg-gray-50 rounded-xl overflow-hidden"
           key={i}
         >
-          <div>
+          <div className="">
             <img
               src={item.image}
               className=" h-72 w-full transition transform ease-in-out duration-700 hover:scale-110"

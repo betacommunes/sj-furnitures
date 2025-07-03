@@ -3,18 +3,20 @@ import AboutBanner from "../../assets/AboutBanner.jpg";
 
 const Banner = () => {
   return (
-    <div className="relative h-screen w-full">
+    <div className="relative md:h-screen h-[70vh]  w-full">
       {/* Background image */}
       <img
         src={AboutBanner}
         alt="Banner"
-        className="absolute inset-0 w-full h-full object-cover brightness-[30%]"
+        className="absolute inset-0 w-full h-full object-left md:object-center object-cover   brightness-[30%]"
       />
 
       {/* Centered content */}
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className=" text-white text-center space-y-8 md:p-8 px-3 w-full md:max-w-2xl pt-20">
-          <h1 className="md:text-4xl text-2xl font-bold">About Us</h1>
+        <div className="  text-center space-y-8 md:p-8 px-3 w-full md:max-w-2xl mt-20">
+          <h1 className=" text-white md:text-4xl text-2xl font-bold">
+            About Us
+          </h1>
           <p>
             Fusce convallis metus id felis luctus adipiscing. Nullam tincidunt
             adipiscing enim. Nunc sed turpis. Praesent nonummy mi in odio. Cum
@@ -30,4 +32,3 @@ const Banner = () => {
 };
 
 export default Banner;
-
