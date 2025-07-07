@@ -6,6 +6,9 @@ module.exports = {
     ],
     theme: {
         extend: {
+            gridTemplateColumns: {
+                'custom': '1fr 1fr 1fr 1fr 1fr 1fr',
+            },
             textColor: {
 
                 'primaryTextClr': '#b4b2b2',

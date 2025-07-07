@@ -15,7 +15,7 @@ const infoItems = [
     icon: (
       <PiTruckLight className="w-10 h-10 font-[50px] text-gray-600 absolute translate-x-3.5 translate-y-3.5" />
     ),
-    title: "Free Shipping Over $35*",
+    title: "Free Shipping Over $35",
     description: "Popular delivery on 1 - 2 days",
     bg: "bg-blue-50",
   },
@@ -39,15 +39,15 @@ const infoItems = [
 
 const Feature = () => {
   return (
-    <div className="border border-inherit md:mx-20 mx-3 md:mt-10 my-10 px-4 py-8 ">
+    <div className="border border-inherit md:mx-20 mx-3 md:mt-20 my-10 px-4 py-8 ">
       <div className=" flex md:justify-center w-full ">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mg:text-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-16 text-start md:text-center">
           {infoItems.map((item, index) => (
             <div key={index} className="flex flex-col items-start gap-3">
               <div className={` relative w-9 h-9 rounded-full mb-5 ${item.bg}`}>
                 {item.icon}
               </div>
-              <div>
+              <div className=" text-start">
                 <h4 className=" text-primary font-semibold text-lg">
                   {item.title}
                 </h4>

@@ -7,6 +7,7 @@ import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
 import LoginModal from "../../LoginSignup/LoginModal";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [toggle, setToggle] = useState(true);
@@ -48,6 +49,13 @@ const Header = () => {
   const handleCloseLogin = () => {
     setShowLogin(false);
   };
+
+  //  Cart items count
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  const totalCartItems = Object.values(cartItems).reduce(
+    (acc, quantity) => acc + quantity,
+    0
+  );
 
   return (
     <div
@@ -91,10 +99,25 @@ const Header = () => {
         {/*  Navbar icons  */}
         <div className=" font-bold flex md:gap-5 gap-2">
           <FiSearch className="cursor-pointer text-xl" />
-          <HiOutlineShoppingBag className="cursor-pointer text-xl" />
 
-          <FaRegUser onClick={handleLoginClick} className="cursor-pointer text-xl"/>
-          {showLogin && (<LoginModal isOpen={showLogin} onClose={() => setShowLogin(false)} />)}
+          {/* Shopping Cart  */}
+          <NavLink to="/cart" className="relative">
+            <HiOutlineShoppingBag className="cursor-pointer text-xl" />
+            <div className="absolute -top-2 -right-2 w-4 h-4 text-xs font-medium flex justify-center items-center bg-secondary text-white rounded-full">
+              {totalCartItems}
+            </div>
+          </NavLink>
+
+          <FaRegUser
+            onClick={handleLoginClick}
+            className="cursor-pointer text-xl"
+          />
+          {showLogin && (
+            <LoginModal
+              isOpen={showLogin}
+              onClose={() => setShowLogin(false)}
+            />
+          )}
         </div>{" "}
       </nav>
       {/*  sidebar rendering logic  */}
