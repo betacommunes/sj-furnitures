@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import TestimonialBg from '../../assets/test-background.jpg';
-
-// 👉 supply real JPG/PNG files here or external URLs
 import Ava1 from '../../assets/avatar.jpg';
 
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';

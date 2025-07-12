@@ -13,10 +13,10 @@ const MainProduct = () => {
   ];
 
   return (
-    <div className="pt-10 text-center space-y-10 text-gray-800">
-      <h2 className="text-xl md:text-2xl font-semibold">Our Products</h2>
-      <h1 className="text-3xl md:text-5xl font-semibold">
-        Our <span className="text-primary">Products Collections</span>
+    <div className="pt-10 text-center space-y-10 ">
+      <h2 className="text-xl md:text-2xl font-semibold text-gray-800">Our Products</h2>
+      <h1 className="text-3xl md:text-5xl font-semibold text-primary">
+        Our <span className="text-secondary">Products Collections</span>
       </h1>
 
       <div className="flex flex-wrap justify-center gap-4">

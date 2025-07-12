@@ -4,6 +4,7 @@ import { IoClose } from "react-icons/io5";
 import { removeFromCart } from "../../actions/cartAction";
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa6";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -26,12 +27,12 @@ const Cart = () => {
       <div className="mt-28 min-h-[40vh] flex flex-col justify-center items-center text-center space-y-5">
         <h2 className="text-3xl font-semibold text-gray-700">Your cart is empty 🛒</h2>
         <p className="text-gray-500 text-lg">Looks like you haven’t added anything yet.</p>
-        <Link
-          to="/product"
-          className="bg-primary hover:bg-opacity-90 text-white px-6 py-3 rounded-lg font-medium"
-        >
-          Shop Now
-        </Link>
+            <Link to="/product">
+              <button className=" flex items-center justify-center gap-2 bg-primary hover:bg-opacity-95 text-white px-6 py-2 rounded-full font-semibold transition">
+                Shop Now
+                <FaArrowRight />
+              </button>
+            </Link>
       </div>
     );
   }

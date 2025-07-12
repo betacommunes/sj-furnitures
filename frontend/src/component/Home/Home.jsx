@@ -1,11 +1,20 @@
-import React from 'react'
-import MainProduct from '../Product/MainProduct'
+import React from "react";
+import FlashSale from "./FlashSale";
+import DealsOfTheDay from "./DealsOfTheDay";
+import Testimonial from "./Testimonial";
+import SocialGallery from "./SocialGallery";
+import Hero from "./Hero";
 
 const Home = () => {
   return (
-    <div className='md:px-20 px-3 mt-20'>
+    <div className=" mt-16">
+      <Hero />
+      <FlashSale />
+      <DealsOfTheDay />
+      <Testimonial />
+      <SocialGallery />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
