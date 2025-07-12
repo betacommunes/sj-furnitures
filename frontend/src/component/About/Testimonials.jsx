@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import TestimonialBg from '../../assets/test-background.jpg';
-
-// 👉 supply real JPG/PNG files here or external URLs
 import Ava1 from '../../assets/avatar.jpg';
 
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
@@ -88,11 +86,11 @@ const testimonials = [
               <img
                 src={item.avatar}
                 alt={item.name}
-                className="w-20 h-20 rounded-full"
+                className="md:w-20 md:h-20 w-16 h-16 rounded-full"
               />
               <div>
-                <h3 className="text-xl font-bold">{item.name}</h3>
-                <p className="text-secondary font-semibold tracking-wide">
+                <h3 className="md:text-xl font-bold">{item.name}</h3>
+                <p className="text-secondary font-semibold tracking-wide md:text-md text-sm">
                   {item.role}
                 </p>
               </div>
@@ -104,7 +102,7 @@ const testimonials = [
         <button
           onClick={prev}
           aria-label="Previous testimonial"
-          className="absolute md:left-20 left-3 top-1/2 -translate-y-1/2 z-20 hidden md:grid place-content-center w-10 h-10 bg-white rounded-full text-gray-300 text-2xl"
+          className="absolute md:left-20 left-3 top-1/2 -translate-y-1/2 z-20 grid place-content-center w-7 h-7 md:w-10 md:h-10 bg-white rounded-full text-gray-300 text-xl md:text-2xl"
         >
           <MdKeyboardArrowLeft />
         </button>
@@ -112,7 +110,7 @@ const testimonials = [
         <button
           onClick={next}
           aria-label="Next testimonial"
-          className="absolute md:right-20 right-3 top-1/2 -translate-y-1/2 z-20 hidden md:grid place-content-center w-10 h-10 bg-white rounded-full text-gray-300 text-2xl"
+          className="absolute md:right-20 right-1 top-1/2 -translate-y-1/2 z-20 grid place-content-center h-7 w-7 md:w-10 md:h-10 bg-white rounded-full text-gray-300 text-xl md:text-2xl"
         >
           <MdKeyboardArrowRight />
         </button>
